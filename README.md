@@ -15,7 +15,7 @@
 
 ● 아래 링크 (그림 1)의 리소스 형상(manifest)이 올라간 결과물 레포 주소 (URL 제출)
 
-![ref_img](./ref_img.gif)
+![ref_img](./src/img/project_ref_img.gif)
 
 ---
 
