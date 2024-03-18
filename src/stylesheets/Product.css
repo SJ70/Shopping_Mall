@@ -62,3 +62,11 @@
     background-color: white;
     font-size: 1em;
 }
+
+.to-cart, .put-in-cart {
+    transition: all .5s;
+}
+
+.to-cart:hover, .put-in-cart:hover {
+    font-weight: 800;
+}

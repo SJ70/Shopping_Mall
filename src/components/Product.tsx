@@ -2,6 +2,9 @@ import { Link, useParams } from 'react-router-dom';
 import { IProduct, getProductById } from '../fakeStoreApi/fakeStoreApi';
 import { useCallback, useEffect, useState } from 'react';
 import '../stylesheets/Product.css';
+import { useDispatch } from 'react-redux';
+import { Action } from 'redux';
+import { addCart } from '../modules/cart';
 
 const Product = () => {
     
@@ -16,7 +19,11 @@ const Product = () => {
     useEffect(() => {
         setProductById();
     }, [setProductById])
-    
+
+    const dispatch = useDispatch();
+
+    const onAdd = (id: number) => dispatch(addCart({id: id}) as Action);
+
     return (
         <div className='product-wrap'>
             <div className='product'>
@@ -29,7 +36,7 @@ const Product = () => {
                     <p className='price'>${product?.price}</p>
                     <p className='description'>{product?.description}</p>
                     <div className='buttons'>
-                        <button className='put-in-cart'>장바구니에 담기</button>
+                        <button className='put-in-cart' onClick={() => onAdd(Number(product?.id))}>장바구니에 담기</button>
                         <Link className='to-cart' to=''>장바구니로 이동</Link>
                     </div>
                 </div>
