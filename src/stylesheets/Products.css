@@ -1,0 +1,96 @@
+.categories {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.categories > .category {
+    padding: .75em;
+    transition: all .5s;
+}
+
+.categories > .category:hover{
+    font-weight: 600;
+}
+
+.selected {
+    font-weight: 900;
+}
+
+.selected, .selected:hover{
+    font-weight: 900;
+}
+
+.products-count {
+    width: 100%;
+    font-size: .75em;
+    opacity: 50%;
+}
+
+.products {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-auto-rows: min-content;
+}
+
+.products .product {
+    height: 15em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+    gap: .5em;
+}
+
+.products > .product > img {
+    width: 80%;
+    height: 10em;
+    object-fit: contain;
+
+    transition: all .5s;
+}
+
+.products > .product:hover {
+    cursor: pointer;
+}
+
+.products > .product:hover > img {
+    transform: scale(1.1);
+}
+
+.products > .product > .name {
+    width: 80%;
+
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    font-size: 1em;
+    font-weight: 600;
+
+    padding: .5em 3em .5em 3em;
+}
+
+.products > .product > .product-inner-div {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.products > .product > .product-inner-div > .cart {
+    padding: 0;
+
+    font-size: 0.8em;
+    border: none;
+    background-color: white;
+    
+}
+
+.products > .product > .product-inner-div > .price {
+    font-weight: 500;
+}
