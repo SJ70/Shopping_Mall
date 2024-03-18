@@ -27,6 +27,10 @@ const getProducts = async (): Promise<IProduct[]> => {
     }
 };
 
+export const getProductById = async (id: number): Promise<IProduct> => {
+    return await (await fetch(`https://fakestoreapi.com/products/${id}`)).json();
+};
+
 export const getProductsByCategory = async (category: Category) => {
     const products = await getProducts();
     if (category === "all") {

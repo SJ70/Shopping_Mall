@@ -5,6 +5,7 @@ import SignUp from './components/SignUp';
 import MyPage from './components/MyPage';
 import Header from './components/Header';
 import Products from './components/Products';
+import Product from './components/Product';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <main>
           <Routes>
             <Route path='/products/:categoryId' Component={Products}/>
+            <Route path='/product/:productId' Component={Product}/>
             <Route path='/my-page' Component={MyPage}/>
             <Route path='/sign-in' Component={SignIn}/>
             <Route path='/sign-up' Component={SignUp}/>

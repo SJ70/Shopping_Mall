@@ -1,0 +1,64 @@
+.product-wrap {
+    margin-top: 3em;
+}
+
+.product {
+    width: 100%;
+    height: 30em;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+}
+
+.product > .image {
+    width: 100%;
+    height: 30em;
+}
+
+.product > .image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.product > .info{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+}
+
+.product > .info > .category{
+    color: gainsboro;
+    font-weight: 500;
+    font-size: 1.25em;
+}
+
+.product > .info > .name{
+    font-weight: 400;
+    font-size: 2em;
+}
+
+.product > .info > .price{
+    font-weight: 700;
+    font-size: 3em;
+}
+
+.product > .info > .description{
+    color: rgb(196, 196, 196);
+    font-size: 1em;
+    flex: .75;
+}
+
+.product > .info > .buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 2em;
+}
+
+.product > .info > .buttons > .put-in-cart{
+    border: none;
+    background-color: white;
+    font-size: 1em;
+}
