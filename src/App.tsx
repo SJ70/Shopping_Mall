@@ -6,6 +6,7 @@ import MyPage from './components/MyPage';
 import Header from './components/Header';
 import Products from './components/Products';
 import Product from './components/Product';
+import Cart from './components/Cart';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path='/my-page' Component={MyPage}/>
             <Route path='/sign-in' Component={SignIn}/>
             <Route path='/sign-up' Component={SignUp}/>
+            <Route path='/cart' Component={Cart}/>
           </Routes>
         </main>
       </BrowserRouter>

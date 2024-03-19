@@ -37,7 +37,7 @@ const Product = () => {
                     <p className='description'>{product?.description}</p>
                     <div className='buttons'>
                         <button className='put-in-cart' onClick={() => onAdd(Number(product?.id))}>장바구니에 담기</button>
-                        <Link className='to-cart' to=''>장바구니로 이동</Link>
+                        <Link className='to-cart' to='../cart'>장바구니로 이동</Link>
                     </div>
                 </div>
             </div>

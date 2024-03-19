@@ -42,7 +42,7 @@ const cartReducer = handleActions<IProductsInCart, any> (
             const idx = state.list.findIndex(item => item.id === id);
             state.list[idx].count = count;
             return {
-                list: [...state.list]
+                list: state.list.filter(item => item.count > 0)
             }
         },
         [REMOVE]: (state, {payload: {id}}) => ({

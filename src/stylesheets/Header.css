@@ -25,3 +25,11 @@ header {
 .logo:hover {
     font-weight: 900;
 }
+
+.link {
+    transition: font-weight .5s;
+}
+
+.link:hover {
+    font-weight: 700;
+}
