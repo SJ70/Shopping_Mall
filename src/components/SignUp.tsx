@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { isEmailDuplicated, signUpEmail } from '../firebase/firebase';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../stylesheets/Sign.css'
 
 const SignUp = () => {
@@ -9,6 +9,8 @@ const SignUp = () => {
     const [canUseEmail, setCanUseEmail] = useState<boolean>(false);
     const [password, setPassword] = useState<string>('');
     const [verifyPassword, setVerifyPassword] = useState<string>('');
+
+    const navigate = useNavigate();
 
     const handleInputEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
         setEmail(e.target.value);
@@ -39,8 +41,9 @@ const SignUp = () => {
             return;
         }
         try {
-            const result = await signUpEmail(email, password);
-            console.log(result);
+            await signUpEmail(email, password);
+            window.alert('회원가입이 완료되었습니다.');
+            navigate('../sign-in');
         }
         catch (e) {
             console.error(e);
