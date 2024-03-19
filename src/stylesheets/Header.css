@@ -33,3 +33,10 @@ header {
 .link:hover {
     font-weight: 700;
 }
+
+.logout {
+    border: none;
+    background-color: transparent;
+    font-size: 1em;
+    padding: 0
+}
