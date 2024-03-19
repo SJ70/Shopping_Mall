@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { login } from '../modules/user';
 import { Action } from 'redux';
 import { User } from 'firebase/auth';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../stylesheets/Sign.css'
 
 const SignIn = () => {
@@ -13,6 +13,7 @@ const SignIn = () => {
     const [password, setPassword] = useState<string>('');
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const onLogin = (user: User) => dispatch(login({user}) as Action);
 
@@ -28,6 +29,8 @@ const SignIn = () => {
         try {
             const UserCredential = await signInEmail(email, password);
             onLogin(UserCredential.user);
+            window.alert('로그인에 성공하였습니다.');
+            navigate('../products/all');
         }
         catch (e) {
             window.alert('존재하지 않는 아이디거나 비밀번호가 잘못되었습니다.');
