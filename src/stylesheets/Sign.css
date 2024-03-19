@@ -1,0 +1,45 @@
+.sign {
+    display: flex;
+    flex-direction: column;
+}
+
+.sign > input, .sign > button, .sign > div {
+    width: 300px;
+}
+
+.sign > div {
+    display: flex;
+    flex-direction: row;
+}
+
+.sign > div > input {
+    flex: 1;
+}
+
+.sign button, .sign input {
+    border: 1px solid gainsboro;
+    box-sizing: border-box;
+    padding: .25em .5em .25em .5em;
+    background-color: transparent;
+}
+
+.sign > span {
+    color: grey;
+    font-size: .75em
+}
+
+.sign > .link {
+    font-size: .9em
+}
+
+.sign button {
+    transition: all .5s;
+}
+
+.sign button:hover {
+    font-weight: 800;
+}
+
+.sign > .title {
+    margin-bottom: 1em;
+}

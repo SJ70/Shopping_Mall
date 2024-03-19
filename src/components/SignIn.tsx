@@ -5,6 +5,7 @@ import { login } from '../modules/user';
 import { Action } from 'redux';
 import { User } from 'firebase/auth';
 import { Link } from 'react-router-dom';
+import '../stylesheets/Sign.css'
 
 const SignIn = () => {
 
@@ -35,8 +36,8 @@ const SignIn = () => {
     }
 
     return (
-        <div>
-            <p>로그인</p>
+        <div className='sign'>
+            <p className='title'>로그인</p>
             <input type='text' placeholder='이메일' onChange={handleInputEmail} value={email}></input>
             <input type='password' placeholder='비밀번호' onChange={handleInputPassword} value={password}></input>
             <button type='submit' onClick={handleSumbit}>로그인</button>
