@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import './stylesheets/App.css';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
@@ -14,6 +14,7 @@ function App() {
         <Header/>
         <main>
           <Routes>
+            <Route path="/" element={<Navigate replace to="/products/all"/>} />
             <Route path='/products/:categoryId' Component={Products}/>
             <Route path='/product/:productId' Component={Product}/>
             <Route path='/my-page' Component={MyPage}/>
