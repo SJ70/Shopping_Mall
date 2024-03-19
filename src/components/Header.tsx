@@ -4,17 +4,33 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Action } from 'redux';
 import { RootState } from '../modules';
 import { logout } from '../modules/user';
+import Cart from './Cart';
 
 const Header = () => {
     return (
         <header>
             <div className='header-wrap'>
                 <Link className='logo' to='/products/all'>Shop</Link>
-                <Link className='link' to='/cart'>장바구니</Link>
+                <CartBtn></CartBtn>
                 <Link className='link' to='/my-page'>마이페이지</Link>
                 <LoginOrLogOut></LoginOrLogOut>
             </div>
         </header>
+    )
+}
+
+const CartBtn = () => {
+
+    const cart = useSelector((state: RootState) => state.cart.list);
+
+    return (
+        <div className='cart-btn'>
+            <Link className='link' to='/cart'>장바구니</Link>
+            <div className= {cart.length === 0 ? 'disabled' : 'cart-items-count'}>{cart.length}</div>
+            <div className='cart-preview'>
+                <Cart></Cart>
+            </div>
+        </div>
     )
 }
 

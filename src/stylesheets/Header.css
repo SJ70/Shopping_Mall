@@ -11,7 +11,7 @@ header {
     width: var(--width);
     max-width: calc(100vw - 3em);
     padding: .5em 1em .5em 1em;
-    gap: .5em;
+    gap: 1.5em;
 }
 
 .logo {
@@ -39,4 +39,42 @@ header {
     background-color: transparent;
     font-size: 1em;
     padding: 0
+}
+
+.cart-btn {
+    position: relative;
+}
+
+.cart-btn > .disabled {
+    display: none;
+}
+
+.cart-items-count {
+    position: absolute;
+    right: -25%;
+    top: -15%;
+    background-color: red;
+    border-radius: 50%;
+    height: 2em;
+    width: 2em;
+    font-size: .5em;
+    color: white;
+    text-align: center;
+}
+
+.cart-btn > .cart-preview {
+    display: none;
+    transition: all .5s;
+}
+
+.cart-btn:hover > .cart-preview{
+    position: absolute;
+    right: 0%;
+    display: flex;
+    background-color: white;
+    font-size: .5em;
+    width: 30rem;
+    border: 1px solid gainsboro;
+    padding: 1em;
+    z-index: 50;
 }
