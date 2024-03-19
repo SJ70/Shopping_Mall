@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { isEmailDuplicated, signUpEmail } from '../firebase/firebase';
+import { Link } from 'react-router-dom';
 
 const SignUp = () => {
 
@@ -56,7 +57,7 @@ const SignUp = () => {
             <input type='password' placeholder='비밀번호 확인' onChange={handleInputVerifyPassword} value={verifyPassword}></input>
             <button type='submit' onClick={handleSumbit}>로그인</button>
             <span>계정이 이미 있습니까?</span>
-            <a>로그인하기</a>
+            <Link className='link' to='../sign-in'>로그인하기</Link>
         </div>
     )
 }

@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { login } from '../modules/user';
 import { Action } from 'redux';
 import { User } from 'firebase/auth';
+import { Link } from 'react-router-dom';
 
 const SignIn = () => {
 
@@ -40,7 +41,7 @@ const SignIn = () => {
             <input type='password' placeholder='비밀번호' onChange={handleInputPassword} value={password}></input>
             <button type='submit' onClick={handleSumbit}>로그인</button>
             <span>계정이 없습니까?</span>
-            <a>가입하기</a>
+            <Link className='link' to='../sign-up'>가입하기</Link>
         </div>
     )
 }
